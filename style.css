@@ -292,24 +292,20 @@ i {
     width: 40px;
     height: 40px;
     border-radius: 50px;
-    animation: iconSlide 4s infinite alternate;
+    animation: iconSlide 5s infinite alternate;
 }
 @keyframes iconSlide {
-    25% {
+    15% {
         border: 2px solid #e6d12e;
         left: 0px;
     }
-    50% {
+    30% {
         border: 2px solid #c40101;
         left: 70px;
     }
-    75% {
+    65% {
         border: 2px solid #8749f2;
         left: 145px;
-    }
-    100% {
-        border: 2px solid #47ea15;
-        left: 216px;
     }
 
 }
@@ -558,8 +554,11 @@ i {
     transform: scale(1.1);
     filter: brightness(100%);
 }
+
+
+
 .modal {
-    display: none;
+    display: none; /* Pastikan modal tidak langsung muncul */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -571,26 +570,49 @@ i {
     align-items: center;
     justify-content: center;
 }
-.modal-content {
+
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Gelap transparan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#modalImage {
+    display: block;
+    margin: auto; /* Ini buat taruh gambar ke tengah */
     max-width: 80%;
     max-height: 80%;
     border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
-.close {
+
+
+#imageModal .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 15px;
+    right: 20px;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     cursor: pointer;
+    background: black;
+    border-radius: 50%;
+    padding: 5px 10px;
 }
+
+
 
 .top-header span {
     color: var(--text-color);
 }
-
-/* contact box */
 
 .contact-info {
     position: relative;
@@ -607,31 +629,34 @@ i {
     box-shadow: 1px 8px 10px 2px var(--first-shadow);
     overflow: hidden;
     cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
 }
 
-.contact-info >h2 {
-    color: var(--text-color);
-    margin-bottom: 20px;
+.contact-info:hover {
+    background-color: #8749f2; /* Warna ungu saat hover */
+    animation: slideUp 0.5s ease-in-out;
 }
 
-.contact-info >p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-color);
-    margin-block: 5px;
+.contact-info:hover h2,
+.contact-info:hover p,
+.contact-info:hover i {
+    color: #fff; /* Warna teks berubah jadi putih */
+    transition: color 0.3s ease-in-out;
 }
 
-.contact-info::after {
-    color: #8749f2;
+/* Animasi dari bawah ke atas */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px); /* Mulai dari bawah */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Kembali ke posisi normal */
+        opacity: 1;
+    }
 }
 
-.contact-info:hover.contact-info h2,
-.contact-info:hover.contact-info p,
-.contact-info:hover.contact-info i {
-    color: #fff;
-    z-index: 2;
-}
 
 /* contact form */
 
@@ -682,12 +707,48 @@ textarea {
 }
 
 /* Dark Mode Styles */
+body.dark {
+    --text-color: #ffffff; /* Warna teks putih */
+    --body-color: #121212; /* Warna background gelap */
+}
+
 body.dark .form-control .input-field,
 body.dark .form-control .input-subject,
-body.dark .form-control textarea {
-    color: var(--text-color); 
-    border-color: var(--text-color); 
+body.dark .form-control textarea,
+body.dark .projects-box,
+body.dark .projects-box h3,
+body.dark .projects-box p {
+    color: var(--text-color) !important;
 }
+
+/* Pastikan juga container project mendapatkan warna background yang lebih kontras */
+body.dark .projects-box {
+    background: #222; /* Warna lebih terang supaya kontras */
+    border: 1px solid var(--text-color); /* Biar lebih terlihat */
+}
+
+/* Dark Mode for Projects */
+body.dark .contact-info h2,
+body.dark .contact-info p {
+    color: #ffffff !important; /* Teks putih */
+}
+body.dark .project-item h3,
+body.dark .project-item p {
+    color: #ffffff !important; /* Teks putih */
+}
+
+body.dark .bottom-footer p {
+    color: #ffffff !important; /* Teks putih */
+}
+
+/* Opsional: Beri sedikit background lebih terang agar kontras */
+body.dark .project-item {
+    background: #222; /* Abu-abu gelap */
+    border: 1px solid #ffffff20; /* Border putih transparan */
+}
+
+
+
 
 .form-button > .btn {
     display: flex;

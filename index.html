@@ -66,10 +66,16 @@
                 </div>
                 <div class="socical_icons">
                     <div class="icons_circle"></div>
-                    <div class="icon"><i class="uil uil-instagram"></i></div>
-                    <div class="icon"><i class="uil uil-linkedin-alt"></i></div>
-                    <div class="icon"><i class="uil uil-behance-alt"></i></div>
-                    <div class="icon"><i class="uil uil-github-alt"></i></div>
+                    <div class="icon">
+                        <a href="https://www.instagram.com/rafa_valian?igsh=MTY0dTJvZGt4b2hjdg==" target="_blank">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/Foxry-hub" target="_blank">
+                            <i class="uil uil-github-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="featured-image">
@@ -148,34 +154,39 @@
                 </div>
             </div>
         </section>
-        <!-- projects box -->
-    <section class="section" id="projects">
-        <div class="top-header">
-            <h1>Projects</h1>
+        <!-- Projects Section -->
+<section class="section" id="projects">
+    <div class="top-header">
+        <h1>Projects</h1>
+    </div>
+    <div class="projects-container">
+        <div class="project-item" onclick="openModal('img/absen.jpg')">
+            <img src="img/absen.jpg" alt="Project 1">
+            <h3>Project 1</h3>
+            <p>Membuat Website absensi sederhana menggunakan bahasa Pemrograman PHP.</p>
         </div>
-        <div class="projects-container">
-            <div class="project-item" onclick="openModal('img/absen.jpg')">
-                <img src="img/absen.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Membuat Website absensi sederhana menggunakan bahasa Pemrograman PHP.</p>
-            </div>
-            <div class="project-item" onclick="openModal('img/perpus.jpg')">
-                <img src="img/perpus.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>Membuat Website Perpustakaan sederhana dengan menggunakan bahasa Pemrograman PHP.</p>
-            </div>
-            <div class="project-item" onclick="openModal('img/ikan.jpg')">
-                <img src="img/ikan.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>Membuat Tampilan landing page sebuah halaman tentang berbagai jenis ikan ikan, menggunakan Figma sebagai dasar awal untuk membuat tampilan website</p>
-            </div>
+        <div class="project-item" onclick="openModal('img/perpus.jpg')">
+            <img src="img/perpus.jpg" alt="Project 2">
+            <h3>Project 2</h3>
+            <p>Membuat Website Perpustakaan sederhana dengan menggunakan bahasa Pemrograman PHP.</p>
         </div>
-    </section>
-    <!-- Modal untuk menampilkan gambar -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close">&times;</span>
+        <div class="project-item" onclick="openModal('img/ikan.jpg')">
+            <img src="img/ikan.jpg" alt="Project 3">
+            <h3>Project 3</h3>
+            <p>Membuat Tampilan landing page sebuah halaman tentang berbagai jenis ikan ikan, menggunakan Figma sebagai dasar awal.</p>
+        </div>
+    </div>
+</section>
+<!-- Modal untuk Menampilkan Gambar -->
+<div id="imageModal" style="display: none;" onclick="closeModal()">
+    <img id="modalImage" src="" alt="Preview">
+</div>
+    <div class="modal-content-wrapper" onclick="event.stopPropagation();">
+        <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
+</div>
+
          <!-- contact box -->
           <section class="section" id="contact">
             <div class="top-header">
@@ -227,11 +238,18 @@
             </ul>
          </div>
          <div class="footer-social-icons">
-            <div class="icon"><i class="uil uil-instagram"></i></div>
-            <div class="icon"><i class="fa-brands fa-linkedin-in icon"></i></div>
-            <div class="icon"><i class="uil uil-behance-alt"></i></div>
-            <div class="icon"><i class="uil uil-github-alt"></i></div>
-         </div>
+            <div class="icon">
+                <a href="https://www.instagram.com/rafa_valian?igsh=MTY0dTJvZGt4b2hjdg==" target="_blank">
+                    <i class="uil uil-instagram"></i>
+                </a>
+            </div>
+            <div class="icon">
+                <a href="https://github.com/Foxry-hub" target="_blank">
+                    <i class="uil uil-github-alt"></i>
+                </a>
+            </div>
+        </div>
+        
          <div class="bottom-footer">
             <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Foxry</a> - All rights reserved 2024</p>
          </div>

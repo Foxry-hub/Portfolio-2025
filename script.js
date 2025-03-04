@@ -96,10 +96,20 @@ function scrollActive() {
 
 window.addEventListener("scroll", scrollActive);
 
-function openModal(imageSrc) {
-    document.getElementById('imageModal').style.display = 'flex';
-    document.getElementById('modalImage').src = imageSrc;
+document.querySelectorAll(".project-item img").forEach(img => {
+    img.addEventListener("click", function () {
+        openModal(this.src);
+    });
+});
+
+function openModal(src) {
+    let modal = document.getElementById("imageModal");
+    let modalImg = document.getElementById("modalImage");
+
+    modal.style.display = "flex"; // Hanya aktif kalau ada klik
+    modalImg.src = src;
 }
+
 function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
+    document.getElementById("imageModal").style.display = "none";
 }
